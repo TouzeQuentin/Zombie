@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch3n2wq5ugqg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36b11"]
+albedo_color = Color(0.388235, 0.215686, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6fkvt"]
+material = SubResource("StandardMaterial3D_36b11")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjjum"]
+size = Vector3(2.7214, 1, 1)
+
+[node name="Barriere" type="StaticBody3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(25.1416, 0, 0, 0, 0.520349, 0, 0, 0, 0.278581, 3.99113, 1.66656, 0.265059)
+mesh = SubResource("BoxMesh_6fkvt")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(25.1416, 0, 0, 0, 0.520349, 0, 0, 0, 0.278581, 3.99113, -1.27871, 0.283672)
+mesh = SubResource("BoxMesh_6fkvt")
+
+[node name="Plances" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 4, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 10, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, -8, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 8, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 0, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 16, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 12, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, -4, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, -2, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 14, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, -6, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 6, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Plances"]
+transform = Transform3D(1, 0, 0, 0, 4.8648, 0, 0, 0, 0.260448, 2.07593, 0, 0)
+mesh = SubResource("BoxMesh_6fkvt")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(9.23793, 0, 0, 0, 6.6971, 0, 0, 0, 1, 4.00692, 1, 0)
+shape = SubResource("BoxShape3D_gjjum")

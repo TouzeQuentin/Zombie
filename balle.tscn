@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://eyypyj5xn2c"]
+
+[ext_resource type="Script" path="res://balle.gd" id="1_okfrf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vf1j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwt4o"]
+albedo_color = Color(0.721569, 0.552941, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s6586"]
+
+[node name="Balle" type="Node3D"]
+transform = Transform3D(-0.99995, 0, -0.0100181, 0, 1, 0, 0.0100181, 0, -0.99995, 0, 0, 0)
+script = ExtResource("1_okfrf")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.00550467, 0, 0.534753)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.343083)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0, 0, 0)
+shape = SubResource("BoxShape3D_1vf1j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.087, 0, 0, 0, -7.64949e-09, -0.087, 0, 0.175, -3.80289e-09, 0, 0, 0.351014)
+material_override = SubResource("StandardMaterial3D_gwt4o")
+mesh = SubResource("CapsuleMesh_s6586")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

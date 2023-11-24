@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://pwt55m4twoix"]
+
+[ext_resource type="Material" uid="uid://dgj5qg6kp8ptn" path="res://Map/Bonus/bonus.tres" id="1_0pq3m"]
+[ext_resource type="Script" path="res://Map/Bonus/bonus_bombe.gd" id="1_gkiqr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m4qlm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oppi"]
+transparency = 1
+albedo_color = Color(1, 0.694118, 0.0784314, 1)
+emission_enabled = true
+emission = Color(0.886275, 0.607843, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e6ngx"]
+material = SubResource("StandardMaterial3D_6oppi")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8kwh3"]
+material = ExtResource("1_0pq3m")
+
+[sub_resource type="BoxMesh" id="BoxMesh_v5k3y"]
+material = ExtResource("1_0pq3m")
+
+[node name="BonusBombe" type="RigidBody3D" groups=["Bonus", "bombe"]]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_gkiqr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_m4qlm")
+
+[node name="Corp" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Corp"]
+transform = Transform3D(1, 0, 0, 0, 0.0636585, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_e6ngx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Corp"]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 0, 0.579037, 0)
+mesh = SubResource("CapsuleMesh_8kwh3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Corp"]
+transform = Transform3D(0.235, 0, 0, 0, 0.125, 0, 0, 0, 0.235, 0, 0.223664, 0)
+mesh = SubResource("BoxMesh_v5k3y")

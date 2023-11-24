@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl0qtgpa52tv4"]
+
+[ext_resource type="Script" path="res://Personnages/Survivant.gd" id="1_dtypm"]
+[ext_resource type="PackedScene" uid="uid://cmjn40lx0evht" path="res://Personnages/Armes/arme.tscn" id="2_w5emj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_krgd5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_785ok"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svqsb"]
+albedo_color = Color(0.152941, 0.0392157, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oi53f"]
+
+[node name="Survivant" type="CharacterBody3D"]
+script = ExtResource("1_dtypm")
+
+[node name="Area3D" type="Area3D" parent="."]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00958192, 0)
+shape = SubResource("CapsuleShape3D_krgd5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_785ok")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_svqsb")
+mesh = SubResource("CapsuleMesh_oi53f")
+
+[node name="Tete" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.166789, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Tete"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55371, 0)
+
+[node name="Arme" parent="Tete/Camera3D" instance=ExtResource("2_w5emj")]
+transform = Transform3D(-2.29485e-08, 0, 0.525, 0, 0.525, 0, -0.525, 0, -2.29485e-08, 0.636577, -0.458561, -0.845427)

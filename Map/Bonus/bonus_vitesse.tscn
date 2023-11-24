@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4xmqv6wfc3g8"]
+
+[ext_resource type="Script" path="res://Map/Bonus/bonus_vitesse.gd" id="1_morc6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4pigl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bx6f8"]
+albedo_color = Color(1, 0.694118, 0.0784314, 1)
+emission_enabled = true
+emission = Color(0.886275, 0.607843, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1nyy4"]
+material = SubResource("StandardMaterial3D_bx6f8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fy2l6"]
+emission_enabled = true
+emission = Color(0.933333, 1, 0.0117647, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lpj5e"]
+material = SubResource("StandardMaterial3D_fy2l6")
+
+[node name="BonusVitesse" type="RigidBody3D" groups=["Bonus", "vitesse"]]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_morc6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.992519, 0, 0, 0, 0.251234, 0, 0, 0, 0.995405, 0, 0.0400648, 0)
+shape = SubResource("CapsuleShape3D_4pigl")
+
+[node name="Corp" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Corp"]
+transform = Transform3D(1, 0, 0, 0, 0.0636585, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_1nyy4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Corp"]
+transform = Transform3D(0.085, 0, 0, 0, 0.417947, 0.0403902, 0, -0.22571, 0.0747906, 0, 0.82592, 0.0629998)
+mesh = SubResource("BoxMesh_lpj5e")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Corp"]
+transform = Transform3D(0.085, 0, 0, 0, 0.334358, 0.0403902, 0, -0.180568, 0.0747906, 0, 0.596163, 0.00959754)
+mesh = SubResource("BoxMesh_lpj5e")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Corp"]
+transform = Transform3D(0.085, 0, 0, 0, 0.171964, 0.0733264, 0, -0.293306, 0.0429911, 0, 0.68509, 0.0465363)
+mesh = SubResource("BoxMesh_lpj5e")

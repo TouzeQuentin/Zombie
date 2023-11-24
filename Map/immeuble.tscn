@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct4xiagjevqdx"]
+
+[ext_resource type="Material" uid="uid://p5mdckxtnmnk" path="res://Map/texture_imeuble.tres" id="1_kfplk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nrpre"]
+material = ExtResource("1_kfplk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3sya"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_vv023"]
+material = SubResource("StandardMaterial3D_c3sya")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ha4gd"]
+material = ExtResource("1_kfplk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75wk6"]
+size = Vector3(0.919663, 0.98365, 1)
+
+[node name="Immeuble" type="StaticBody3D"]
+
+[node name="Piliers" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Piliers"]
+transform = Transform3D(2, 0, 0, 0, 30, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_nrpre")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Piliers"]
+transform = Transform3D(2, 0, 0, 0, 30, 0, 0, 0, 2, 0, 0, 15)
+mesh = SubResource("BoxMesh_nrpre")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Piliers"]
+transform = Transform3D(2, 0, 0, 0, 30, 0, 0, 0, 2, 15, 0, 15)
+mesh = SubResource("BoxMesh_nrpre")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Piliers"]
+transform = Transform3D(2, 0, 0, 0, 30, 0, 0, 0, 2, 15, 0, 0)
+mesh = SubResource("BoxMesh_nrpre")
+skeleton = NodePath("../../..")
+
+[node name="Largeur" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(16, 0, 0, 0, 28, 0, 0, 0, 16, 7.46901, -0.00307369, 7.48209)
+mesh = SubResource("BoxMesh_vv023")
+skeleton = NodePath("../..")
+
+[node name="Contours" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.49927, -14.0361, 7.43715)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.499, -10.318, 7.437)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.499, -6.318, 7.437)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.499, -2.318, 7.437)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.499, 1.682, 7.437)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.499, 5.682, 7.437)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.499, 9.682, 7.437)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Contours"]
+transform = Transform3D(17, 0, 0, 0, 2, 0, 0, 0, 17, 7.499, 14.0017, 7.437)
+mesh = SubResource("BoxMesh_ha4gd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(18.5656, 0, 0, 0, 30.7282, 0, 0, 0, 17.1176, 7.53723, 2.32831e-10, 7.38341)
+shape = SubResource("BoxShape3D_75wk6")

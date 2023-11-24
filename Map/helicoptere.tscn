@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://juoe67we7wdi"]
+
+[ext_resource type="Material" uid="uid://bg0yg1hhuuxtf" path="res://Map/vert.tres" id="1_fuofo"]
+[ext_resource type="Material" uid="uid://q4kdsdbbqjnr" path="res://Map/helice.tres" id="2_vfkfc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uaufk"]
+material = ExtResource("1_fuofo")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3f7a8"]
+material = ExtResource("1_fuofo")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2thua"]
+material = ExtResource("1_fuofo")
+
+[sub_resource type="BoxMesh" id="BoxMesh_23c6f"]
+material = ExtResource("1_fuofo")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rhh1b"]
+material = ExtResource("2_vfkfc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_222ap"]
+material = ExtResource("2_vfkfc")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mebfs"]
+material = ExtResource("2_vfkfc")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ymd1d"]
+material = ExtResource("2_vfkfc")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yy3co"]
+height = 1.74431
+
+[node name="Helicoptere" type="RigidBody3D" groups=["helicoptere"]]
+mass = 1000.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 2.4839, 0)
+mesh = SubResource("CapsuleMesh_uaufk")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.65797e-07, -1.3, 0, 3.793, -5.68248e-08, 0, 4.27421, -5.49829)
+mesh = SubResource("CylinderMesh_3f7a8")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999998, -0.00132257, 0.00215686, 8.8652e-05, 1.13804, 0.628379, -0.00194419, -0.628378, 1.13804, 0, 3.63983, -4.45958)
+mesh = SubResource("BoxMesh_2thua")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.438748, -2.15242, 0, 0.998549, 0.945742, 0, 4.69831, -9.24498)
+mesh = SubResource("BoxMesh_23c6f")
+skeleton = NodePath("")
+
+[node name="helice" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="helice"]
+transform = Transform3D(0.825, 0, 0, 0, 0.825, 0, 0, 0, 0.825, 0, 4.99466, 0)
+mesh = SubResource("CylinderMesh_rhh1b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="helice"]
+transform = Transform3D(12.7755, 0.00100607, -0.524001, -0.0592817, 0.175997, 0.00448511, 7.86026, -0.000307828, 0.851706, 0, 5.76615, 0)
+mesh = SubResource("BoxMesh_222ap")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="helice"]
+transform = Transform3D(7.95141, 0.00035256, 0.847936, -0.044514, 0.175999, -0.000507214, -12.719, -0.000395557, 0.530098, 0, 5.76615, 0)
+mesh = SubResource("BoxMesh_222ap")
+
+[node name="helice2" type="Node3D" parent="."]
+transform = Transform3D(-9.61651e-09, 0.22, 0, -0.22, -9.61651e-09, 0, 0, 0, 0.22, -0.510324, 4.90966, -9.47495)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="helice2"]
+transform = Transform3D(0.825, 0, 0, 0, 0.825, 0, 0, 0, 0.825, 0, 4.99466, 0)
+mesh = SubResource("CylinderMesh_rhh1b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="helice2"]
+transform = Transform3D(12.7755, 0.00100607, -0.524001, -0.0592817, 0.175997, 0.00448511, 7.86026, -0.000307828, 0.851706, 0, 5.76615, 0)
+mesh = SubResource("BoxMesh_222ap")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="helice2"]
+transform = Transform3D(7.95141, 0.00035256, 0.847936, -0.044514, 0.175999, -0.000507214, -12.719, -0.000395557, 0.530098, 0, 5.76615, 0)
+mesh = SubResource("BoxMesh_222ap")
+
+[node name="pied" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pied"]
+transform = Transform3D(0.464396, -0.0949862, 0, 0.0723654, 0.609562, 0, 0, 0, 0.47, 1.545, 0, -2.28266)
+mesh = SubResource("CylinderMesh_mebfs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="pied"]
+transform = Transform3D(0.464396, -0.0949862, 0, 0.0723654, 0.609562, 0, 0, 0, 0.47, 1.545, 0, 1.84055)
+mesh = SubResource("CylinderMesh_mebfs")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="pied"]
+transform = Transform3D(0.46, 0, 0, 0, -1.71396e-07, -0.46, 0, 3.92109, -2.01072e-08, 1.63318, -0.59895, -0.452258)
+mesh = SubResource("CylinderMesh_ymd1d")
+
+[node name="pied2" type="Node3D" parent="."]
+transform = Transform3D(0.908224, 0.418485, 0, -0.418485, 0.908224, 0, 0, 0, 1, -2.95514, 0.676934, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pied2"]
+transform = Transform3D(0.464396, -0.0949862, 0, 0.0723654, 0.609562, 0, 0, 0, 0.47, 1.545, 0, -2.28266)
+mesh = SubResource("CylinderMesh_mebfs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="pied2"]
+transform = Transform3D(0.464396, -0.0949862, 0, 0.0723654, 0.609562, 0, 0, 0, 0.47, 1.545, 0, 1.84055)
+mesh = SubResource("CylinderMesh_mebfs")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="pied2"]
+transform = Transform3D(0.46, 0, 0, 0, -1.71396e-07, -0.46, 0, 3.92109, -2.01072e-08, 1.63318, -0.59895, -0.452258)
+mesh = SubResource("CylinderMesh_ymd1d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.44, 0, 0, 0, -2.78223e-07, -5.14, 0, 6.365, -2.24677e-07, 0, 2.34148, 0)
+shape = SubResource("CapsuleShape3D_yy3co")

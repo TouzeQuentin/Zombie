@@ -1,0 +1,204 @@
+[gd_scene load_steps=17 format=3 uid="uid://dpbfjd4l6de4l"]
+
+[ext_resource type="Script" path="res://Personnages/zombie.gd" id="1_qkrst"]
+[ext_resource type="AudioStream" uid="uid://bpq60nc2jw4n5" path="res://Son/Zombie-Breathing-Short-A2-www.fesliyanstudios.com.mp3" id="2_j7ocu"]
+[ext_resource type="AudioStream" uid="uid://ctvijqouwewhc" path="res://Son/Zombie-Breathing-Short-A1-www.fesliyanstudios.com.mp3" id="3_bddao"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ey8k"]
+height = 2.50158
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovcuh"]
+albedo_color = Color(0.18, 0.54, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6thsu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gr6ec"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hcv88"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7in2"]
+albedo_color = Color(0.180392, 0.541176, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d6fix"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv1kp"]
+albedo_color = Color(0.18, 0.54, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ynx3b"]
+material = SubResource("StandardMaterial3D_bv1kp")
+
+[sub_resource type="Animation" id="Animation_bg8fx"]
+resource_name = "marcher"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jambe1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.349066, 0, 0), Vector3(-0.349066, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jambe2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.349066, 0, 0), Vector3(0.349066, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jambe1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.212389, -0.657328, -1.85676e-08), Vector3(-0.212, -0.657, -0.1), Vector3(-0.212, -0.657, 0.1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Jambe2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.19666, -0.657328, 1.71925e-08), Vector3(0.197, -0.657, 0.1), Vector3(0.197, -0.657, -0.1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bras1:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.74533, 0, 0), Vector3(1.5708, 0, 0), Vector3(1.39626, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bras2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.39626, 0, 0), Vector3(1.5708, 0, 0), Vector3(1.74533, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bras2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.492218, 0.607668, -0.456794), Vector3(-0.492, 0.558, -0.457), Vector3(-0.492218, 0.607668, -0.456794), Vector3(-0.492, 0.658, -0.457)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bras1:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.576388, 0.607668, -0.456794), Vector3(0.576, 0.658, -0.457), Vector3(0.576388, 0.607668, -0.456794), Vector3(0.576, 0.558, -0.457)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jr1x"]
+_data = {
+"marcher": SubResource("Animation_bg8fx")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6viox"]
+albedo_color = Color(0.101961, 0.560784, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_raq4r"]
+
+[node name="Zombie" type="CharacterBody3D" groups=["zombies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.578622, 0)
+script = ExtResource("1_qkrst")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["zombies"]]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1.10109, 0, 0.633541, 0)
+shape = SubResource("CapsuleShape3D_2ey8k")
+
+[node name="Tete" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tete"]
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 0, 1.23193, 0)
+material_override = SubResource("StandardMaterial3D_ovcuh")
+mesh = SubResource("SphereMesh_6thsu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tete"]
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 0, 1.23192, 0)
+shape = SubResource("SphereShape3D_gr6ec")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Tete"]
+transform = Transform3D(-0.085, 0, 0, 0, 3.71547e-09, 0.085, 0, -0.085, 3.71547e-09, 0.133675, 1.3478, -0.381563)
+mesh = SubResource("CapsuleMesh_hcv88")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Tete"]
+transform = Transform3D(-0.085, 0, 0, 0, 3.71547e-09, 0.085, 0, -0.085, 3.71547e-09, -0.135257, 1.3478, -0.382118)
+mesh = SubResource("CapsuleMesh_hcv88")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.918176, 0, 0, 0, 0.690247, 0, 0, 0, 0.786565, -0.000250518, 0.294693, -0.00441098)
+material_override = SubResource("StandardMaterial3D_o7in2")
+mesh = SubResource("CapsuleMesh_d6fix")
+
+[node name="Jambe1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.882001, 0, 0, 0, 0.3, -0.212389, -0.657328, -1.85676e-08)
+mesh = SubResource("BoxMesh_ynx3b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6jr1x")
+}
+
+[node name="Jambe2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.882001, 0, 0, 0, 0.3, 0.19666, -0.657328, 1.71925e-08)
+mesh = SubResource("BoxMesh_ynx3b")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.35
+
+[node name="Bras1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, -2.1358e-06, -0.4, 0, 0.59, -1.448e-06, 0.576388, 0.607668, -0.456794)
+material_override = SubResource("StandardMaterial3D_6viox")
+mesh = SubResource("CapsuleMesh_raq4r")
+
+[node name="Bras2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, -2.1358e-06, -0.4, 0, 0.59, -1.448e-06, -0.492218, 0.607668, -0.456794)
+material_override = SubResource("StandardMaterial3D_6viox")
+mesh = SubResource("CapsuleMesh_raq4r")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_j7ocu")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_bddao")

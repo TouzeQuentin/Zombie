@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmjn40lx0evht"]
+
+[ext_resource type="AudioStream" uid="uid://crln7bejbbka6" path="res://Son/1911-.45-ACP-Close-Single-Gunshot-C-www.fesliyanstudios.com.mp3" id="1_qcf4i"]
+[ext_resource type="AudioStream" uid="uid://e8luwuhj7eqp" path="res://Son/1911-reload-6248.mp3" id="2_vqm6y"]
+
+[sub_resource type="Animation" id="Animation_315yg"]
+resource_name = "recharger"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("test:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5bw1l"]
+resource_name = "tirer"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.872665, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2c0am"]
+_data = {
+"recharger": SubResource("Animation_315yg"),
+"tirer": SubResource("Animation_5bw1l")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psmvv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8nbog"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57fcw"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_enkr7"]
+
+[sub_resource type="Skin" id="Skin_5msva"]
+
+[node name="Arme" type="Node3D"]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00758586, 0.317631, -0.719713)
+target_position = Vector3(0, 0, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2c0am")
+}
+
+[node name="test" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="test"]
+transform = Transform3D(0.181688, -0.187125, 0, 0.561377, 0.0605625, 0, -5.68434e-14, -1.13687e-13, 0.162186, -0.584105, 0, 0)
+material_override = SubResource("StandardMaterial3D_psmvv")
+mesh = SubResource("BoxMesh_8nbog")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="test"]
+transform = Transform3D(0.0757687, 0, 0, 0, 0.196681, 0, -2.84217e-14, 0, 0.0273022, 0.560143, 0.332646, 4.14217e-06)
+material_override = SubResource("StandardMaterial3D_psmvv")
+mesh = SubResource("BoxMesh_8nbog")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="test"]
+transform = Transform3D(0.0757687, 0, 0, 0, 0.196681, 0, -2.84217e-14, 0, 0.0273022, -0.246604, 0.149618, 1.22175e-06)
+material_override = SubResource("StandardMaterial3D_psmvv")
+mesh = SubResource("BoxMesh_8nbog")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="test"]
+transform = Transform3D(0.0325478, 0.262397, -6.25823e-08, -0.0825513, 0.103456, -9.19454e-08, -2.03401e-07, 9.49874e-07, 0.0273023, -0.358405, 0.029583, 8.17031e-07)
+material_override = SubResource("StandardMaterial3D_psmvv")
+mesh = SubResource("BoxMesh_8nbog")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="test"]
+transform = Transform3D(1.235, 0, 0, 0, 0.195, 0, 0, 0, 0.156516, 0, 0.306845, 0)
+material_override = SubResource("StandardMaterial3D_57fcw")
+mesh = SubResource("BoxMesh_enkr7")
+skin = SubResource("Skin_5msva")
+skeleton = NodePath("../..")
+
+[node name="Tirer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_qcf4i")
+volume_db = 5.0
+
+[node name="Recharger" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vqm6y")
